@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <title>Tip calculator app</title>
+
+</head>
+<body>
+     <div class="logo">
+          <img src="./images/logo.svg" alt="logo">
+     </div>
+     <div class="calculator">
+           <div class="calculator-main">
+                <div class="bill-description">
+                     <h3 class="bill-title">Bill</h3>
+
+                    <div class="bill" >
+                      <span class="currency"><img src="./images/icon-dollar.svg" alt="dollar-icon"></span>
+                      <input oninput="calculateTip()" class="amount" id="bill" type="number" name="bill" placeholder="0" >
+                      <span class="bill-error">Bill can't be more than 10000</span>
+                    </div>
+                </div>
+                <div class="percentages">
+                      <h3 class="bill-title">Select Tip %</h3>
+                      <div class="tip">
+                           <button class="tip-item">5%</button>
+                           <button class="tip-item">10%</button>
+                           <button class="tip-item">15%</button>
+                           <button class="tip-item">25%</button>
+                           <button class="tip-item">50%</button>
+                           <button oninput="calculateTipCustom()" onclick="removeActive()" class="custom"><input type="number" name="custom" id="custom" placeholder="Custom" min="1" max="100"></button>
+                      </div>
+                 </div>
+                <div class="percentages">
+                      <div class="people-amount">
+                         <h3 class="bill-title">Number of People</h3>
+                         <span class="error-message">Can't be zero</span>
+                      </div>
+                      <div class="bill">
+                        <span class="person-icon"><img src="./images/icon-person.svg" alt="person-icon"></span>
+                        <input oninput="calculateTip()" type="number" class="amount" name="people" id="people-amount" min="1" placeholder="0">
+                      </div>
+                </div>
+            </div>
+
+            <div class="right-calculator">
+                 <div class="calculator-item">
+                      <div class="calculator-top">
+                           <div class="person-amount">
+                               <h3 class="tip-amount">Tip Amount</h3>
+                               <span class="person">/ person</span>
+                           </div>
+                           <span class="total-tip">$0.00</span>
+
+                      </div>
+                      <div class="calculator-bottom">
+                           <div>
+                            <h3 class="total2">Total</h3>
+                            <span class="person">/ person</span>
+                           </div>
+                           <span class="total">$0.00</span>
+                      </div>
+                  </div>
+                <input class="reset active" type="reset" value="reset">
+          </div>
+      </div>
+
+
+<script src="./main.js"></script>
+
+
+</body>
+</html>
