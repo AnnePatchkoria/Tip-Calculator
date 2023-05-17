@@ -20,8 +20,8 @@ reset.addEventListener("click", () => {
   total.innerHTML = "$0.00";
   document.querySelector("#custom").value = "";
   document.querySelector("#bill").value = 0;
-  if (document.querySelector(".custom").classList.contains("error")) {
-    document.querySelector(".custom").classList.remove("error");
+  if (document.querySelector(".tip--custom").classList.contains("error")) {
+    document.querySelector(".tip--custom").classList.remove("error");
   }
   if (document.querySelector(".bill").classList.contains("error")) {
     document.querySelector(".bill").classList.remove("error");
@@ -72,8 +72,8 @@ function calculateTip() {
     errorMessage.classList.remove("error");
     document.querySelector("#people-amount").classList.remove("error");
   }
-  if (document.querySelector(".custom").classList.contains("error")) {
-    document.querySelector(".custom").classList.remove("error");
+  if (document.querySelector(".tip--custom").classList.contains("error")) {
+    document.querySelector(".tip--custom").classList.remove("error");
   }
 }
 
@@ -94,13 +94,16 @@ function calculateTipCustom() {
       bill / people +
       ((bill / people) * percent) / 100
     ).toFixed(2)}`;
-  } else if (custom > 100) {
+  } 
+  
+  if (custom > 100) {
     tipTotal.innerHTML = "$0.00";
     total.innerHTML = "$0.00";
-    document.querySelector(".custom").classList.add("error");
+    console.log("Type less than 100");
+    document.querySelector(".tip--custom").classList.add("error"); 
   } else {
-    if (document.querySelector(".custom").classList.contains("error")) {
-      document.querySelector(".custom").classList.remove("error");
+    if (document.querySelector(".tip--custom").classList.contains("error")) {
+      document.querySelector(".tip--custom").classList.remove("error");
     }
   }
 }

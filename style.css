@@ -55,10 +55,11 @@ input {
   position: relative;
 }
 .bill-error {
+  font-size: 1rem;
   position: absolute;
   left: 50%;
   top: 0;
-  transform: translate(-50%, -150%);
+  transform: translate(-35%, -127.9%);
   font-size: 0.75 rem;
   white-space: nowrap;
   color: #e17457;
@@ -106,7 +107,7 @@ input {
   font-size: 1.5rem;
   opacity: 1;
 }
-.custom {
+.tip--custom{
   background-color: #f3f9fa;
   color: #547878;
   font-size: 1.5rem;
@@ -115,12 +116,12 @@ input {
   position: relative;
 }
 
-.custom:focus {
+.tip--custom:focus {
   outline: 0;
   border: 2px solid #26c2ae;
 }
 
-.custom::after {
+.tip--custom.error::after{
   content: "Type less than 100";
   position: absolute;
   left: 50%;
